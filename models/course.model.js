@@ -3,27 +3,27 @@ import mongoose from "mongoose";
 const courseSchema = new mongoose.Schema(
   {
     title: {
-      type: string,
+      type: String,
       required: [true, "please enter your course title"],
       trim: true,
       maxlength: [50, "Cann't exceed from 50 characters!..."],
     },
     subtitle: {
-      type: string,
+      type: String,
       trim: true,
       malength: [20, "Subtitle cann't be more than 20 characters!.."],
     },
     description: {
-      type: string,
+      type: String,
       trim: true,
     },
     category: {
-      type: string,
+      type: String,
       trim: true,
       required: [20, "Category is required"],
     },
     level: {
-      typr: string,
+      typr: String,
       enum: {
         values: ["Beginner", "Intermediate", "Advanced"],
         message: "Please select a valid role!...",
@@ -36,7 +36,7 @@ const courseSchema = new mongoose.Schema(
       min: [0, "Price can not be non-negative"],
     },
     thumbnail: {
-      type: string,
+      type: String,
       required: [true, "Course thumbnail is required!..."],
     },
     enrolledStudents: [

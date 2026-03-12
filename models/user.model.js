@@ -5,13 +5,13 @@ import crypto from "crypto";
 const userSchema = new mongoose.Schema(
   {
     user: {
-      type: string,
+      type: String,
       requires: [true, "Please enter yout name"],
       trim: true,
       maxLength: [50, "Cann't exceed from 50 characters"],
     },
     emial: {
-      type: string,
+      type: String,
       required: [true, "Please enter your name"],
       unique: true,
       trim: true,
@@ -29,7 +29,7 @@ const userSchema = new mongoose.Schema(
       select: false,
     },
     role: {
-      type: string,
+      type: String,
       enum: {
         vales: ["student", "instructor", "admin"],
         message: ["please select your valid role !..."],
@@ -37,7 +37,7 @@ const userSchema = new mongoose.Schema(
       default: student,
     },
     avatar: {
-      type: string,
+      type: String,
       default: avatar.png,
     },
     bio: {
